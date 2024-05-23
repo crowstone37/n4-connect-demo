@@ -1,0 +1,72 @@
+<!-- <div class="container">
+    <div
+      id="leftBox"
+
+      #leftBox
+      class="box"
+      [ngStyle]="{ top: leftBoxPosition.y + 'px', left: leftBoxPosition.x + 'px' }"
+
+      (mousedown)="onMouseDown('left')">
+      Left Box
+    </div>
+           (cdkDragMoved)="onDragMoved($event, 'left')" -->
+          <!-- (cdkDragEnded)="onDragEnded($event, 'left')" -->
+    <!-- <div
+      id="rightBox"
+      cdkDrag
+      #rightBox
+      class="box"
+      [ngStyle]="{ top: rightBoxPosition.y + 'px', left: rightBoxPosition.x + 'px' }"
+      
+      (mousedown)="onMouseDown('right')">
+      Right Box
+    </div> -->
+    <!--(cdkDragMoved)="onDragMoved($event, 'right')"
+      (cdkDragEnded)="onDragEnded($event, 'right')"-->
+    <!-- <svg class="svg-overlay">
+      <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
+    </svg>
+  </div> -->
+  <div class="container">
+    <div
+      id="leftBox"
+      #leftBox
+      class="box"
+      [ngStyle]="{ top: leftBoxPosition.y + 'px', left: leftBoxPosition.x + 'px' }"
+      (mousedown)="onMouseDown('left', $event)">
+      Left Box
+    </div>
+    <div
+      id="rightBox"
+      #rightBox
+      class="box"
+      [ngStyle]="{ top: rightBoxPosition.y + 'px', left: rightBoxPosition.x + 'px' }"
+      (mousedown)="onMouseDown('right', $event)">
+      Right Box
+    </div>
+    <svg class="svg-overlay">
+      <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- <div class="container">
+    <div
+      id="leftBox"
+      #leftBox
+      class="box"
+      [ngStyle]="{ top: leftBoxPosition.y + 'px', left: leftBoxPosition.x + 'px' }"
+      (mousedown)="onMouseDown('left')">
+      Left Box
+    </div>
+    <div
+      id="rightBox"
+      #rightBox
+      class="box"
+      [ngStyle]="{ top: rightBoxPosition.y + 'px', left: rightBoxPosition.x + 'px' }"
+      (mousedown)="onMouseDown('right')">
+      Right Box
+    </div>
+    <svg class="svg-overlay">
+      <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
+    </svg>
+  </div> -->
