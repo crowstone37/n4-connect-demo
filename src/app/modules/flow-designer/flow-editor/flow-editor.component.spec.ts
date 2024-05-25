@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlowEditorComponent } from './flow-editor.component';
 
-import { FlowDesignerComponent } from './flow-editor.component';
 
-describe('FlowDesignerComponent', () => {
-  let component: FlowDesignerComponent;
-  let fixture: ComponentFixture<FlowDesignerComponent>;
+
+describe('FlowEditorComponent', () => {
+  let component: FlowEditorComponent;
+  let fixture: ComponentFixture<FlowEditorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FlowDesignerComponent]
+      imports: [FlowEditorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(FlowDesignerComponent);
+    fixture = TestBed.createComponent(FlowEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
