@@ -7,3 +7,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 a, button {
     cursor: pointer;
 }
+
+.rounded-btn {
+    border: solid 1px black;
+    border-radius: 25px;
+}
+
+.solid-1-black {
+ border: solid 1px black;
+}

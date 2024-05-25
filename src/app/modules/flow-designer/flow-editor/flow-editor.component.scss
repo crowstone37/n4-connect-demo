@@ -25,21 +25,20 @@
     width: 100px;
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    background-color: white;
   }
 
-  .box {
-    
-    background-color: white;
+  .box {    
+
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    // border: 3px solid #000;
-    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
-  .connector-box {
-    width: 30px;
-    height: 30px;
+  .port {
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
     border: 1px solid #000;
   }
   .svg-overlay {

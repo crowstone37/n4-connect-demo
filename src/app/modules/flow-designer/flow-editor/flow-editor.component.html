@@ -22,14 +22,13 @@
       <div
         id="leftBox"
         #leftBox
-        class="box connector-box"
+        class="box port"
         [ngStyle]="{
-          top: leftBoxPosition.y + 'px',
+          top: leftBoxPosition.y + (leftBoxPosition.y / 4) + 'px',
           left: leftBoxPosition.x + 100 + 'px'
         }"
         (mousedown)="onMouseDown('left', $event)"
       >
-        P0
       </div>
     </div>
     <!-- [ngStyle]="{
@@ -51,7 +50,7 @@
         (mouseup)="moveContainerEnd()"
         [ngStyle]="{
           top: rightBoxPosition.y + 'px',
-          left: rightBoxPosition.x + 30 + 'px'
+          left: rightBoxPosition.x + 10 + 'px'
         }"
       >
         asd
@@ -59,14 +58,13 @@
       <div
         id="rightBox"
         #rightBox
-        class="box connector-box"
+        class="box port"
         (mousedown)="onMouseDown('right', $event)"
         [ngStyle]="{
-          top: rightBoxPosition.y + 'px',
+          top: rightBoxPosition.y + (rightBoxPosition.y / 4) + 'px',
           left: rightBoxPosition.x + 'px'
         }"
       >
-        P0
       </div>
     </div>
   </div></section>
