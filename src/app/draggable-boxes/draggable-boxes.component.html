@@ -27,15 +27,19 @@
       <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
     </svg>
   </div> -->
-  <nav id="nav"><ul>
-    <li>File</li>
-  </ul></nav>
+<nav id="editor-nav">
+  <ul class="flex flex-row p-3">
+    @for(item of ['File', 'Menu', 'Mock', 'Up']; track item){
+    <li class="px-3">{{ item }}</li>
+    }
+  </ul>
+</nav>
 <div class="editor-container w-screen h-screen overflow-auto border-solid">
   <div
     class="box-container flex flex-row"
-   cdkDrag
-      [cdkDragDisabled]="dragmode != 'queen'" >
-   
+    cdkDrag
+    [cdkDragDisabled]="dragmode != 'queen'"
+  >
     <div
       id="itembox"
       class="item-box box"
@@ -43,40 +47,48 @@
       (mouseup)="moveContainerEnd()"
       [ngStyle]="{
         top: leftBoxPosition.y + 'px',
-        left: leftBoxPosition.x + 'px'}"
-    >asd</div>
-    <div
-        id="leftBox"
-        #leftBox
-        class="box connector-box"
-        [ngStyle]="{
-          top: leftBoxPosition.y + 'px',
-          left: leftBoxPosition.x + 100 + 'px'}" 
-        (mousedown)="onMouseDown('left', $event)"
-      >P0
+        left: leftBoxPosition.x + 'px'
+      }"
+    >
+      asd
     </div>
-   </div>
-        <!-- [ngStyle]="{
+    <div
+      id="leftBox"
+      #leftBox
+      class="box connector-box"
+      [ngStyle]="{
+        top: leftBoxPosition.y + 'px',
+        left: leftBoxPosition.x + 100 + 'px'
+      }"
+      (mousedown)="onMouseDown('left', $event)"
+    >
+      P0
+    </div>
+  </div>
+  <!-- [ngStyle]="{
           top: leftBoxPosition.y + 'px',
           left: leftBoxPosition.x + 'px'
         }" -->
-    <svg class="svg-overlay">
-      <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
-    </svg>
-    <div
+  <svg class="svg-overlay">
+    <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
+  </svg>
+  <div
     class="box-container flex flex-row"
-   cdkDrag
-      [cdkDragDisabled]="dragmode != 'queen'" >
+    cdkDrag
+    [cdkDragDisabled]="dragmode != 'queen'"
+  >
     <div
-    id="itembox"
-    class="item-box box"
-    (mousedown)="moveContainer()"
-    (mouseup)="moveContainerEnd()"
-    [ngStyle]="{
+      id="itembox"
+      class="item-box box"
+      (mousedown)="moveContainer()"
+      (mouseup)="moveContainerEnd()"
+      [ngStyle]="{
         top: rightBoxPosition.y + 'px',
         left: rightBoxPosition.x + 30 + 'px'
       }"
-  >asd</div>
+    >
+      asd
+    </div>
     <div
       id="rightBox"
       #rightBox
@@ -86,13 +98,13 @@
         top: rightBoxPosition.y + 'px',
         left: rightBoxPosition.x + 'px'
       }"
-    >P0</div>
+    >
+      P0
     </div>
-
-
   </div>
+</div>
 
-  <!-- <div class="container">
+<!-- <div class="container">
     <div
       id="leftBox"
       #leftBox
@@ -113,4 +125,3 @@
       <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
     </svg>
   </div> -->
-

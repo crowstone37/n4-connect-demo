@@ -14,6 +14,7 @@ export class DraggableBoxesComponent implements AfterViewInit {
   @ViewChild('rightBox') rightBox!: ElementRef;
 
 
+
   dragmode = 'queen';
 
   leftBoxPosition = { x: 50, y: 200 };
