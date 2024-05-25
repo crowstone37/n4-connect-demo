@@ -4,12 +4,13 @@
     // height: 600px;
     background-color: white;
     background-image: 
-        linear-gradient(lightgrey 1px, transparent 1px),
-        linear-gradient(to right, lightgrey 1px, transparent 1px);
+        linear-gradient(rgb(243, 243, 243) 1px, transparent 1px),
+        linear-gradient(to right, rgb(243, 243, 243) 1px, transparent 1px);
     background-size: 75px 75px; 
     margin: 0;
     // height: 100vh;
     background-position: 0 0, 0 0;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     // -ms-zoom: 0.75;
     // -moz-transform: scale(0.75);
     // -moz-transform-origin: 0 0;
@@ -23,7 +24,7 @@
   .item-box {
     width: 100px;
     height: 100px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   }
 
   .box {

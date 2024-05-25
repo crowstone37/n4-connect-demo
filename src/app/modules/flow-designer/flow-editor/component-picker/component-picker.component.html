@@ -1,0 +1,35 @@
+<div cdkDropListGroup>
+  <section
+    class="z-10 flex flex-col justify-between"
+    cdkDropList
+    [cdkDropListData]="availableComponents"
+    #availableComponentsList="cdkDropList"
+  >
+    <ul class="flow-component-list" *ngIf="showComponentPicker">
+      @for(availableComponent of availableComponents; track availableComponent){
+      <li
+        id="itembox"
+        class="m-3 h-10 component-item"
+        cdkDrag
+        [cdkDragData]="availableComponent"
+        (mousedown)="toggleDropZone(true)"
+
+        (mouseup)="toggleDropZone(false)"
+      >
+        {{ availableComponent.label }}
+      </li>
+      }
+    </ul>
+    <button (click)="showComponentPicker = !showComponentPicker" class="p-3">
+      Show Items
+    </button>
+  </section>
+
+  <section
+    [ngClass]="{ hidden: !showDropZone }"
+    class="w-100 drop-zone z-10"
+    cdkDropList
+    [cdkDropListConnectedTo]="[availableComponentsList]"
+    (cdkDropListDropped)="drop($event)"
+  ></section>
+</div>

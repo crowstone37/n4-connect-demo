@@ -1,0 +1,14 @@
+.component-item {
+    border: solid 1px black;
+    cursor: pointer;
+}
+
+.drop-zone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50px; //TODO: Fix to correct values
+    left: 120px;
+    background-color: green;
+
+}

@@ -1,30 +1,33 @@
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { FlowEditorService } from '../flow-editor.service';
+import { FlowComponent } from '../models/flow-component';
 
 @Component({
   selector: 'n4-flow-editor',
   templateUrl: './flow-editor.component.html',
   styleUrl: './flow-editor.component.scss'
 })
-export class FlowEditorComponent {
+export class FlowEditorComponent implements AfterViewInit, OnInit {
   @ViewChild('leftBox') leftBox!: ElementRef;
   @ViewChild('rightBox') rightBox!: ElementRef;
 
+  allowContainerDrag = true;
 
+  availableFlowComponents: FlowComponent[] = [];
 
-  dragmode = 'queen';
-
-  leftBoxPosition = { x: 50, y: 200 };
-  rightBoxPosition = { x: 500, y: 200 };
+  leftBoxPosition = { x: 150, y: 200 };
+  rightBoxPosition = { x: 600, y: 200 };
   pathData: string = '';
 
   draggingEnd: 'none' | 'left' | 'right' = 'none';
   mouseX: number = 0;
   mouseY: number = 0;
 
-  constructor(private cdr: ChangeDetectorRef){
 
+
+  constructor(private cdr: ChangeDetectorRef, private flowEditorService: FlowEditorService){ }
+  ngOnInit(): void {
+    this.availableFlowComponents = this.flowEditorService.getAvailableFlowComponents();
   }
 
   ngAfterViewInit(): void {
@@ -33,19 +36,19 @@ export class FlowEditorComponent {
 
   moveContainer(){
     this.draggingEnd = 'left'
-    this.dragmode = 'queen'
+    this.allowContainerDrag = true
     this.updatePath();
   }
 
   moveContainerEnd(){
-    this.dragmode = 'queen'
+    this.allowContainerDrag = true
     this.updatePath();
-    this.dragmode = 'king'
+    this.allowContainerDrag = false
 
   }
 
   onMouseDown(box: 'left' | 'right', event: MouseEvent): void {
-    this.dragmode = 'king';
+    this.allowContainerDrag = false
     this.draggingEnd = box;
     this.mouseX = event.clientX;
     this.mouseY = event.clientY;
@@ -63,14 +66,14 @@ export class FlowEditorComponent {
 
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent): void {
-    this.dragmode = 'queen';
+    this.allowContainerDrag = true
     if (this.draggingEnd !== 'none') {
       this.mouseX = event.clientX;
       this.mouseY = event.clientY;
       
       this.updatePath();
       this.draggingEnd = 'none';
-      this.dragmode = 'king';
+      this.allowContainerDrag = false
     }
     this.updatePath();
   }
@@ -85,7 +88,7 @@ export class FlowEditorComponent {
       let endX = rightBoxRect.left;
       let endY = rightBoxRect.top + rightBoxRect.height / 2;
 
-      if (this.draggingEnd === 'left' && this.dragmode == 'king') {
+      if (this.draggingEnd === 'left' && !this.allowContainerDrag) {
         endX = this.mouseX;
         endY = this.mouseY;
       }    

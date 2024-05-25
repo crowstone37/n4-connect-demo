@@ -1,15 +1,11 @@
-<nav id="editor-nav">
-    <ul class="flex flex-row p-3">
-      @for(item of ['File', 'Menu', 'Mock', 'Up']; track item){
-      <li class="px-3">{{ item }}</li>
-      }
-    </ul>
-  </nav>
+<n4-editor-file-menu />
+<section class="flex flex-row">
+  <n4-component-picker class="flex-1" [availableComponents]="availableFlowComponents" />
   <div class="editor-container w-screen h-screen overflow-auto border-solid">
     <div
       class="box-container flex flex-row"
       cdkDrag
-      [cdkDragDisabled]="dragmode != 'queen'"
+      [cdkDragDisabled]="!allowContainerDrag"
     >
       <div
         id="itembox"
@@ -46,7 +42,7 @@
     <div
       class="box-container flex flex-row"
       cdkDrag
-      [cdkDragDisabled]="dragmode != 'queen'"
+      [cdkDragDisabled]="!allowContainerDrag"
     >
       <div
         id="itembox"
@@ -73,4 +69,4 @@
         P0
       </div>
     </div>
-  </div>
+  </div></section>
