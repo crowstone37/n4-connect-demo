@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlowDesignerComponent } from './flow-designer/flow-designer.component';
+import { FlowEditorComponent } from './flow-editor/flow-editor.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FlowDesignerComponent,
+    component: FlowEditorComponent,
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 

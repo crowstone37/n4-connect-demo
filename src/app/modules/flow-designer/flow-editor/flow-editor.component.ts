@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-flow-designer',
-  templateUrl: './flow-designer.component.html',
-  styleUrl: './flow-designer.component.scss'
+  selector: 'n4-flow-editor',
+  templateUrl: './flow-editor.component.html',
+  styleUrl: './flow-editor.component.scss'
 })
-export class FlowDesignerComponent {
+export class FlowEditorComponent {
   @ViewChild('leftBox') leftBox!: ElementRef;
   @ViewChild('rightBox') rightBox!: ElementRef;
 

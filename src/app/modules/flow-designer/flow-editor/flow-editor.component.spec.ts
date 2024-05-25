@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlowDesignerComponent } from './flow-designer.component';
+import { FlowDesignerComponent } from './flow-editor.component';
 
 describe('FlowDesignerComponent', () => {
   let component: FlowDesignerComponent;
