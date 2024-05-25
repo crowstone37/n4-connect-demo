@@ -1,17 +1,44 @@
-.container {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    border: 1px solid #000;
-  }
-  .box {
+.editor-container {
+    // position: relative;
+    // width: 800px;
+    // height: 600px;
+    background-color: white;
+    background-image: 
+        linear-gradient(lightgrey 1px, transparent 1px),
+        linear-gradient(to right, lightgrey 1px, transparent 1px);
+    background-size: 100px 100px; /* Größe des Rasters */
+    margin: 0;
+    // height: 100vh;
+    background-position: 0 0, 0 0;
+    // -ms-zoom: 0.75;
+    // -moz-transform: scale(0.75);
+    // -moz-transform-origin: 0 0;
+    // -o-transform: scale(0.75);
+    // -o-transform-origin: 0 0;
+    // -webkit-transform: scale(0.75);
+    // -webkit-transform-origin: 0 0;
+}
+  
+
+  .item-box {
     width: 100px;
     height: 100px;
-    background-color: lightgray;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .box {
+    
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
+    // border: 3px solid #000;
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .connector-box {
+    width: 30px;
+    height: 30px;
     border: 1px solid #000;
   }
   .svg-overlay {
@@ -22,3 +49,9 @@
     height: 100%;
     pointer-events: none;
   }
+
+  // .box-container {
+  //   border: solid 1px black;
+  //   padding: 1rem;
+  // }
+
