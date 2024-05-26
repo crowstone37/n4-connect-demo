@@ -24,12 +24,12 @@
   .item-box {
     width: 100px;
     height: 100px;
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    // box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    border: solid 2px black;
     background-color: white;
   }
 
   .box {    
-
     display: flex;
     align-items: center;
     justify-content: center;

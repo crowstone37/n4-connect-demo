@@ -13,7 +13,7 @@ type Schemes = GetSchemes<
 >;
 type AreaExtra = AngularArea2D<Schemes>;
 
-export async function createEditor(container: HTMLElement, injector: Injector) {
+export async  function createEditor(container: HTMLElement, injector: Injector) {
   const socket = new ClassicPreset.Socket("socket");
 
   const editor = new NodeEditor<Schemes>();

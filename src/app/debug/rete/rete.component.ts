@@ -16,7 +16,7 @@ import { createEditor } from './editor';
   styleUrl: './rete.component.scss',
 })
 export class ReteComponent implements AfterViewInit {
-  @ViewChild('rete') container!: ElementRef;
+  @ViewChild('flowEditor') container!: ElementRef;
 
   constructor(private injector: Injector) {}
 
