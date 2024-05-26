@@ -1,8 +1,8 @@
-<n4-editor-file-menu />
+<!-- <n4-editor-file-menu /> -->
 <section class="flex flex-row">
-  <n4-component-picker class="flex-1" [availableComponents]="availableFlowComponents" />
-  <div class="editor-container w-screen h-screen overflow-auto border-solid">
-    <div
+  <!-- <n4-component-picker class="flex-1" [availableComponents]="availableFlowComponents" /> -->
+  <!-- <div class="editor-container w-screen h-screen overflow-auto border-solid"> -->
+    <!-- <div
       class="box-container flex flex-row"
       cdkDrag
       [cdkDragDisabled]="!allowContainerDrag"
@@ -30,15 +30,15 @@
         (mousedown)="onMouseDown('left', $event)"
       >
       </div>
-    </div>
+    </div> -->
     <!-- [ngStyle]="{
             top: leftBoxPosition.y + 'px',
             left: leftBoxPosition.x + 'px'
           }" -->
-    <svg class="svg-overlay">
+    <!-- <svg class="svg-overlay">
       <path [attr.d]="pathData" stroke="blue" stroke-width="2" fill="none" />
-    </svg>
-    <div
+    </svg> -->
+    <!-- <div
       class="box-container flex flex-row"
       cdkDrag
       [cdkDragDisabled]="!allowContainerDrag"
@@ -66,5 +66,7 @@
         }"
       >
       </div>
-    </div>
-  </div></section>
+    </div> -->
+  <!-- </div> -->
+  <n4-rete></n4-rete>
+</section>

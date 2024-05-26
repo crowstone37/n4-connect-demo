@@ -5,6 +5,7 @@ import { CdkDropList, DragDropModule } from '@angular/cdk/drag-drop';
 import { FlowEditorComponent } from './flow-editor/flow-editor.component';
 import { ComponentPickerComponent } from './flow-editor/component-picker/component-picker.component';
 import { EditorFileMenuComponent } from './flow-editor/editor-file-menu/editor-file-menu.component';
+import { ReteComponent } from '../../debug/rete/rete.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EditorFileMenuComponent } from './flow-editor/editor-file-menu/editor-f
     FlowDesignerRoutingModule,
     DragDropModule,
     CdkDropList,
+    ReteComponent
   ],
 })
 export class FlowDesignerModule {}
